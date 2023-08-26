@@ -5,14 +5,45 @@
         <title>My Portfolio</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+        <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body ng-app="myApp">
-
-<p><a href="#/!">Main</a></p>
-
-<a href="#!red">Red</a>
-<a href="#!green">Green</a>
-<a href="#!blue">Blue</a>
+<header>
+    <!-- <div>
+        <input #s type="text" placeholder="Search me" 
+        (keyup.enter)="search(s.value)"
+        [value]="searchTerm" />
+        <button (click)="search(s.value)">Search</button>
+    </div> -->
+    <div class="container">
+        <a href="/index.html" class="logo">My Portfolio</a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#!red">Home</a>
+                </li>
+                <li>
+                    <a href="#!green">About</a>
+                </li>
+                <li>
+                    <a href="#!blue">
+                        Services
+                    </a>
+                </li>
+                <li>
+                    <a href="#!blue">
+                        Contact
+                    </a>
+                </li>
+                <li>
+                    <a href="#!blue">
+                        lets talk
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
 <div ng-view></div>
 
