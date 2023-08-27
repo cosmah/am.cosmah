@@ -6,6 +6,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
         <link rel="stylesheet" href="assets/css/style.css">
+        <script src="assets/javascript/app.js"></script>
 </head>
 <body ng-app="myApp">
 <header>
@@ -16,27 +17,27 @@
         <button (click)="search(s.value)">Search</button>
     </div> -->
     <div class="container">
-        <a href="/index.html" class="logo">My Portfolio</a>
+        <a href="/index.htm" class="logo">My Portfolio</a>
         <nav>
             <ul>
                 <li>
-                    <a href="#!red">Home</a>
+                    <a href="#!index">Home</a>
                 </li>
                 <li>
-                    <a href="#!green">About</a>
+                    <a href="#!about">About</a>
                 </li>
                 <li>
-                    <a href="#!blue">
+                    <a href="#!services">
                         Services
                     </a>
                 </li>
                 <li>
-                    <a href="#!blue">
+                    <a href="#!contact">
                         Contact
                     </a>
                 </li>
                 <li>
-                    <a href="#!blue">
+                    <a href="#!talk">
                         lets talk
                     </a>
                 </li>
@@ -48,25 +49,19 @@
 <div ng-view></div>
 
 <script>
-var app = angular.module("myApp", ["ngRoute"]);
-app.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl : "main.htm"
-    })
-    .when("/red", {
-        templateUrl : "red.htm"
-    })
-    .when("/green", {
-        templateUrl : "green.htm"
-    })
-    .when("/blue", {
-        templateUrl : "blue.htm"
-    });
-});
+
 </script>
 
-<p>Click on the links to navigate to "red.htm", "green.htm", "blue.htm", or back to "main.htm"</p>
+<!-- index.htm -->
+<div ng-controller="IndexController">
+    <h1>Welcome to My Portfolio</h1><br>
+    <p>This content appears only on the landing page.</p>
+    
+    <!-- Additional paragraphs for the index page -->
+    <p ng-if="isIndexPage">This paragraph is specific to the index page.</p>
+    <p ng-if="isIndexPage">Another paragraph for the index page.</p>
+</div>
+
 </body>
 
 </html>
